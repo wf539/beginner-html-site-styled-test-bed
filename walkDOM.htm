@@ -1,0 +1,38 @@
+<html>
+	<!-- saved from url=(0014)about:internet -->
+	<head>
+	</head>
+	<body id="theBody">
+		<h1>My JavaScript test page</h1>
+		
+		<input type="text" id="txtInput" />
+		<input type="button" value="Add text!" onClick="onAddText()" />
+		
+		<div id="container">
+		
+		</div>
+		
+		<script>
+		
+			function onAddText() {
+				var cont = document.getElementById("container");
+				var txt = document.getElementById("txtInput").value;
+				cont.innerHTML += txt + "<br />";
+			}
+			
+			function walkTheDOM(node, F) {
+				F(node);
+				node = node.firstChild;
+				while (node) {
+					walkTheDOM(node, F);
+					node = node.nextSibling;
+				}
+			}
+			
+			<!-- walkTheDOM(document.getElementById("theBody"), -->
+			<!-- function (node) { -->
+				<!-- alert(node.nodeName + ", " + node.nodeValue); -->
+			<!-- }); -->
+		</script>
+	</body>
+</html>

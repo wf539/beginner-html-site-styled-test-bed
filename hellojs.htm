@@ -1,0 +1,151 @@
+<!-- saved from url=(0014)about:internet -->
+
+<script>
+	<!-- x = 10; -->
+	<!-- y = "Hi"; -->
+	<!-- z = true; -->
+	
+	<!-- document.write(x + y + z); -->
+	<!-- document.write("<br />"); -->
+	
+	<!-- a = x; -->
+	<!-- x = y; -->
+	<!-- y = !z; -->
+	<!-- z = a; -->
+	
+	<!-- document.write(x + y + z); -->
+	<!-- document.write("<br />"); -->
+	
+	var thisIsAVariableDeclaration = 1;
+	var x = 10;
+	var y = "Hi";
+	var z = true;
+	
+	document.write(x + y + z);
+	document.write("<br />");
+	
+	//thisIsAVariableDeclaaration = 2;
+	document.write(thisIsAVariableDeclaration);
+	document.write("<br />");
+	
+	var a = x;
+	x = y;
+	y = !z;
+	z = a;
+	
+	document.write(x + y + z);
+	document.write("<hr />");
+	
+	<!-- alert(1 + "23" + 4); -->
+	
+	<!-- alert("Operators"); -->
+	<!-- var s = ""; -->
+	<!-- document.write(s); -->
+	<!-- alert( s == 0 ); -->
+	<!-- alert( s === 0 ); -->
+	
+	<!-- document.write("<hr />"); -->
+	<!-- alert("Arrays"); -->
+	
+	document.write("<br />");
+	var someArray = [10, 20, 30, 40, 50];
+	
+	document.write(someArray[3]);
+	document.write("<br />");
+	
+	alert("Array indices are strings!:");
+	
+	for (var i in someArray)
+	document.write( typeof(i));
+	document.write("<hr />");
+
+	function sumAll(someArray) {
+		var sum = 0;
+		
+		for (var i in someArray)
+			sum += someArray[i];
+			
+		return sum;
+	}
+	
+	var arr = [1,2,3,4,5];
+	
+	document.write(sumAll(arr));
+	document.write("<hr />");
+	
+	function applyToAll(F, C) {
+		for (var i in C)
+		F(C[i]);
+	}
+	
+	// alert each element of the given array:
+	function alertAll(someArray) {
+		applyToAll(alert, someArray);
+	}
+	
+	// alternative to the above
+	function alertAll_v2(someArray) {
+		applyToAll(new Function("e", "alert(e);"), someArray);
+	}
+	
+	<!-- function sumAll2(someArray) { -->
+		<!-- var temp = 0.0; -->
+		<!-- applyToAll(function addToTemp(e) { -->
+			<!-- temp += e; -->
+		<!-- }, someArray); -->
+		<!-- return temp; -->
+	<!-- } -->
+	
+	function sumAll2(someArray) {
+		var temp = 0.0;
+		applyToAll(function (e) {
+			temp += e;
+		}, someArray);
+		return temp;
+	}
+	
+	var rg = [0, 1, 2, 3];
+	alertAll(rg);	
+	
+	document.write(sumAll2(rg));
+	document.write("<hr />");
+	
+	function getIncrementFunc(incBy) {
+		var sum = 0;
+		return function() {
+			sum += incBy;
+			return sum;
+		}
+	}
+	
+	var f = getIncrementFunc(3);
+	document.write(f());
+	document.write("<br />");
+	document.write(f());
+	document.write("<br />");
+	document.write(f());
+	document.write("<br />");
+	
+	document.write("<hr />");
+	var g = getIncrementFunc(2);
+	document.write(g());
+	document.write("<br />");
+	document.write(g());
+	document.write("<br />");
+	document.write(g());
+	document.write("<br />");
+	
+	document.write("<hr />");
+	document.write(f());
+	document.write("<hr />");
+	
+	
+	function walkTheDOM(node, F) {
+		F(node);
+		node = node.firstChild;
+		while (node) {
+			walkTheDOM(node, F);
+			node = node.nextSibling:
+		}
+	}
+</script>

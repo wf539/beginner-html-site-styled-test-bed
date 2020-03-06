@@ -1,0 +1,31 @@
+<!-- saved from url=(0014)about:internet -->
+<script>
+
+//function Employee(name, salary) {
+//	this.name = name;
+//	this.salary = salary;
+//	
+//	this.issuePaycheck = function() {
+//		var monthly = this.salary / 12;
+//		document.write(this.name + ": " + monthly);
+//	};
+//}
+
+function Employee(name, salary) {
+	this.name = name;
+	this.salary = salary;
+}
+
+Employee.prototype.issuePaycheck = function() {
+	var monthly = this.salary / 12;
+	document.write(this.name + ": " + monthly);
+};
+
+var emp = new Employee("Fred", 10000);
+emp.issuePaycheck();
+
+document.write("<br />");
+
+var emp2 = new Employee("Alicia", 9000);
+emp2.issuePaycheck();
+</script>

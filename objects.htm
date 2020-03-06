@@ -1,0 +1,35 @@
+<!-- saved from url=(0014)about:internet -->
+<script>
+
+var emp = new Object();
+emp["name"] = "Pooja";
+emp["salary"] = 72001.44;
+emp["issuePaycheck"] = function() {
+	var monthly = this["salary"]/12;
+	document.write(this["name"] + ": " + monthly);
+};
+
+emp["issuePaycheck"]();
+document.write("<br />");
+
+var f = emp["issuePaycheck"];
+f();
+
+document.write("<br />");
+
+var g = emp["issuePaycheck"];
+var name = "foo";
+var salary = 10000;
+g();
+
+var emp2 = new Object();
+emp2.name = "Fred";
+emp2.salary = 82001.44;
+emp2.issuePaycheck = function() {
+	var monthly = this["salary"]/12;
+	document.write(this["name"] + ": " + monthly);
+};
+
+document.write("<br />");
+emp2.issuePaycheck();
+</script>
